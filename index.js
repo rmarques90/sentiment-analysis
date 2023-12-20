@@ -29,6 +29,13 @@ app.post('/sentiment', async (req, res) => {
     return res.status(200).json({sentiment: sentiment});
 });
 
+app.get('/generate-text', async (req, res) => {
+
+    let textGenerated = await openAiService.generateWonSaleText();
+
+    return res.status(200).json({text: textGenerated});
+})
+
 app.listen(PORT, () => {
     console.log('server started on port: ' + PORT);
 });

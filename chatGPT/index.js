@@ -1,9 +1,6 @@
 const OpenAI = require('openai');
-const fs = require('fs');
 const {post} = require("axios");
 const FormData = require('form-data');
-const i18nPT = require('../i18n/pt_BR');
-const i18nEN = require('../i18n/en_US');
 const {translate} = require("../utils");
 
 class OpenAIService {
@@ -73,6 +70,23 @@ class OpenAIService {
             model: this.model,
             messages: [
                 {role: "user", content: promptText}
+            ]
+        })
+
+        if (resp.choices?.length) {
+            return resp.choices[0].message?.content;
+        }
+    }
+
+    async generateWonSaleText() {
+        let resp = await this.#openAi.chat.completions.create({
+            model: this.model,
+            messages: [
+                {role: "system", content: "You are a salesman"},
+                {role: "user", content: "Write a generic welcome email to a new customer, using, at maximum, 100 words"},
+                {role: "assistant", content: "The name of the customer must be replaced with the variable {{name}}"},
+                {role: "assistant", content: "The name of the company must be replaced with the variable {{company}}"},
+                {role: "assistant", content: "The name of the salesman must be replaced with the variable {{salesman}}"},
             ]
         })
 

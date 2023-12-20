@@ -4,3 +4,8 @@ Content-Type: application/json
 {
   "text": "I love you"
 }
+
+###
+
+GET http://localhost:3000/generate-text
+Content-Type: application/json
