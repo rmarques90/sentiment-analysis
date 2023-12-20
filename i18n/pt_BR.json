@@ -1,0 +1,3 @@
+{
+    "sentimentAnalysisPrompt": "Analise o sentimento do texto a seguir, retornando positivo ou negativo"
+}

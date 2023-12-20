@@ -1,0 +1,6 @@
+POST http://localhost:3000/sentiment
+Content-Type: application/json
+
+{
+  "text": "I love you"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "text-sentiment",
+  "version": "1.0.0",
+  "description": "Software to analyze sentiments from a call, e-mail or anything else",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "R Marques",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "form-data": "^4.0.0",
+    "openai": "^4.24.0"
+  }
+}
