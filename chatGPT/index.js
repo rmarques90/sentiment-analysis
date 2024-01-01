@@ -3,7 +3,7 @@ const {post} = require("axios");
 const FormData = require('form-data');
 const {translate} = require("../utils");
 
-class OpenAIService {
+module.exports = class OpenAIService {
 
     #openAi = null;
     model = "gpt-3.5-turbo"
@@ -94,8 +94,4 @@ class OpenAIService {
             return resp.choices[0].message?.content;
         }
     }
-}
-
-module.exports = {
-    OpenAIService
 }

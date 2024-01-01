@@ -1,5 +1,5 @@
 const {configDotenv} = require("dotenv");
-const {OpenAIService} = require("./chatGPT");
+const OpenAIService = require("./chatGPT");
 const fs = require("fs");
 const express = require('express');
 
